@@ -133,6 +133,12 @@
                             <p>Bill</p>
                         </div>
                         <input type="number" id="input-bill">
+                        <div class="+">
+                            
+                        </div>
+                        <div class="-">
+                            
+                        </div>
                     </div>
                     <div class="tip">
                         <div class= "tip-title">
@@ -148,8 +154,9 @@
                     </div>
                 </div>
                 <div class= "results">
-                    <p>Tip <span id="display-tip"></span></p>
-                    <p>Total <span id="display-total"></span></p>
+                    <p>Tip: <span id="display-tip"></span></p>
+                    <p>Total: <span id="display-total"></span></p>
+                    <p>Each Person Pays: <span id="display-total-individual"></span></p>
                 </div>
             </div>
         </div>
@@ -160,7 +167,12 @@
         const inputPeople = document.getElementById('input-people')
         const displayTip = document.getElementById('display-tip')
         const displayTotal = document.getElementById('display-total')
+        const displayTotalPerPerson = document.getElementById('display-total-perPerson')
         
+        let bill = 0 
+        let tip = 0
+        let people = 0
+
         inputBill.addEventListener('change', function(e) {
 
         })
@@ -180,5 +192,8 @@
             displayTip.innerHTML = tip
             displayTotal.innerHTML = total
         })
+
+        
+
     </script>
 </html>
