@@ -2,124 +2,7 @@
 <html>
     <head>
         <title>Tip Calculator</title>
-        <style>
-            body, html {
-                height: 100%;
-            }
-
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 20px;
-                font-family: Helvetica;
-            }
-
-            input {
-                font-size: 1rem;
-            }
-
-            .tip-calculator{
-                display: flex;
-                flex-direction: row;
-                align-content: center;
-                border-style: solid;
-                border-width: 0.5px;
-            }
-
-            .calculation {
-                border-width: 0.5px;
-                background-color: azure;
-
-            }
-
-            .bill {
-                border-style: solid;
-                border-width: 0.5px;
-            }
-
-            .bill p {
-                color: rgb(36, 15, 15);
-                border-width: 0.5px;
-            }
-
-            .bill-title {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            #input-bill {
-                border-style:solid;
-                border-width: 0.5px;
-                padding: 3px;
-            }
-
-            .people {
-                border-style: solid;
-                border-width: 0.5px;
-            }
-
-            .people-title {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .people p {
-                color: rgb(36, 15, 15);
-                border-width: 0.5px;
-            }
-
-            #input-people {
-                border-style:solid;
-                border-width: 0.5px;
-                padding: 3px;
-            }
-
-            .tip {
-                border-style: solid;
-                border-width: 0.5px;
-            }
-
-            .tip p {
-                color: rgb(36, 15, 15);
-                border-width: 0.5px;
-            }
-
-            .tip-title {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            #input-tip {
-                border-style:solid;
-                border-width: 0.5px;
-                padding: 3px;
-            }
-
-            .results {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 0 0 0 19px;
-                width: 300px;
-                height: 279px;
-                border-width: 0.5px;
-                background-color: azure;
-            }
-
-            .results p {
-                color: rgb(36, 15, 15);
-                border-width: 0.5px;
-            }
-
-            .title-calc {
-                display: flex;
-                font-size: 1.5em;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class= "Project">
@@ -156,7 +39,7 @@
                 <div class= "results">
                     <p>Tip: <span id="display-tip"></span></p>
                     <p>Total: <span id="display-total"></span></p>
-                    <p>Each Person Pays: <span id="display-total-perPerson"></span></p>
+                    <p>Each Person Pays: <span id="display-perPerson"></span></p>
                 </div>
             </div>
         </div>
@@ -174,11 +57,17 @@
         let people = 0
 
         inputBill.addEventListener('change', function(e) {
-
+            calculate()
+        })
+        inputBill.addEventListener('change', function(e) {
+            calculate()
         })
 
         inputTip.addEventListener('change', function(e) {
+            calculate()
+        })
 
+        function calculate() {
             const percent = parseInt(inputTip.value)
             const bill = parseFloat(inputBill.value)
             const people = parseInt(inputPeople.value)
@@ -192,6 +81,6 @@
             displayTip.innerHTML = tip
             displayTotal.innerHTML = total
             displayPerPerson.innerHTML = perPerson
-        })
+        }
     </script>
 </html>
